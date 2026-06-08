@@ -10,9 +10,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 const MobileMenu = () => {
   const lists = [
     { id: 1, text: "Dashboard" },
-    { id: 2, text: "Bills" },
-    { id: 3, text: "History" },
-    { id: 4, text: "Support" },
+    { id: 2, text: "History" },
+    { id: 3, text: "Support" },
   ];
 
   const { setMenuBtn, user, userData } = useContext(UserContext);
