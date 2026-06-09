@@ -1,4 +1,4 @@
-import { FaGoogle } from "react-icons/fa";
+import gsap from "gsap";
 import animation from "../../images/835.gif";
 import { useContext, useState } from "react";
 import { auth } from "../../firebase/config";
@@ -8,7 +8,6 @@ import { IoLockClosedOutline } from "react-icons/io5";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { MdOutlineAccountBalanceWallet, MdOutlineEmail } from "react-icons/md";
-import gsap from "gsap";
 
 const LoginPage = () => {
   const { userData, setUserData, setErrorMess } = useContext(UserContext);
