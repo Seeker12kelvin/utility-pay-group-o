@@ -108,7 +108,7 @@ const DashboardPage = () => {
             <div className="w-full lg:flex-1 h-auto p-4 sm:p-6 bg-white box flex flex-col gap-4">
               <div className="flex flex-col sm:flex-row justify-between w-full items-start sm:items-center gap-2 sm:gap-0">
                 <h2 className="text-[#091C35] text-xl sm:text-2xl font-medium">
-                  Pending Utilities
+                  Utilities
                 </h2>
 
                 <div className="bg-[#FFDAD6] rounded-4xl px-3 py-1 w-fit">

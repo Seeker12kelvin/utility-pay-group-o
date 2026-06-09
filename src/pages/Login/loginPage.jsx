@@ -8,6 +8,7 @@ import { IoLockClosedOutline } from "react-icons/io5";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { MdOutlineAccountBalanceWallet, MdOutlineEmail } from "react-icons/md";
+import gsap from "gsap";
 
 const LoginPage = () => {
   const { userData, setUserData, setErrorMess } = useContext(UserContext);
@@ -26,7 +27,20 @@ const LoginPage = () => {
       setLoginText(true);
       navigate("/dashboard");
     } catch (err) {
-      navigate("/");
+      console.error("Login error:", err.code);
+      if (err.code === "auth/invalid-credential") {
+        const tl = gsap.timeline();
+        tl.fromTo(
+          ".passerr",
+          { opacity: 0, xPercent: 50, zIndex: 0 },
+          { opacity: 1, xPercent: 0, zIndex: 10, duration: 0.5 },
+        ).to(
+          ".passerr",
+          { opacity: 0, xPercent: -50, zIndex: 0, duration: 0.5 },
+          "+=5",
+        );
+      }
+
       setErrorMess(
         "I'm sorry but you do not have an account with us. Sign up?",
       );
@@ -37,7 +51,7 @@ const LoginPage = () => {
   };
 
   return (
-    <main className="max-md:h-dvh md:h-screen w-full flex flex-col gap-5 p-5 justify-center items-center">
+    <main className="max-md:h-dvh md:h-screen w-full flex flex-col gap-5 p-5 justify-center items-center relative">
       <div className="bg-[#003D9B] text-white rounded-lg h-fit w-fit p-2 flex items-center justify-center">
         <MdOutlineAccountBalanceWallet size={30} />
       </div>
@@ -52,7 +66,7 @@ const LoginPage = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="max-w-110 w-full max-h-122.75 h-fit box max-[481px]:p-5 min-[481px]:p-10"
+        className="max-w-110 w-full max-h-122.75 h-fit box max-[481px]:p-5 min-[481px]:p-10 relative"
       >
         {!animate ? (
           <div className="h-fit w-full flex flex-col gap-5">
@@ -105,8 +119,8 @@ const LoginPage = () => {
             </label>
 
             <label className="flex gap-2 items-center text-sm text-[#434654] font-normal max-md:text-xs">
-              <input type="checkbox" required />
-              <p>Remember me for 30 days</p>
+              <input type="checkbox" />
+              <p>Remember me for 30 days?</p>
             </label>
 
             <button
@@ -130,6 +144,12 @@ const LoginPage = () => {
           Create an account
         </Link>
       </p>
+
+      <div className="absolute bottom-1/3 -translate-x-1/2 passerr h-fit bg-[#cddeee] p-2 rounded-sm max-w-85.5 w-fit opacity-0 z-1 flex flex-col gap-2">
+        <p className="text-[red] text-sm text-center">
+          Incorrect password or email
+        </p>
+      </div>
     </main>
   );
 };
