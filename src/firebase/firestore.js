@@ -63,7 +63,7 @@ export async function initializeUserBills(uid, name) {
       {
         name: "Electricity",
         amount: 142.5,
-        dueDate: "Oct 5, 2024",
+        dueDate: "Oct 5, 2026",
         status: "pending",
         accountNumber: "#4492-011",
         description: "Monthly electricity charges",
@@ -72,7 +72,7 @@ export async function initializeUserBills(uid, name) {
       {
         name: "Water & Sewage",
         amount: 68.2,
-        dueDate: "Oct 24, 2024",
+        dueDate: "Oct 24, 2026",
         status: "pending",
         accountNumber: "#8831-402",
         description: "Water and sewage utilities",
@@ -81,7 +81,7 @@ export async function initializeUserBills(uid, name) {
       {
         name: "Gas",
         amount: 45.75,
-        dueDate: "Oct 10, 2024",
+        dueDate: "Oct 10, 2026",
         status: "pending",
         accountNumber: "#5521-789",
         description: "Natural gas supply",
@@ -90,7 +90,7 @@ export async function initializeUserBills(uid, name) {
       {
         name: "Internet",
         amount: 59.99,
-        dueDate: "Oct 15, 2024",
+        dueDate: "Oct 15, 2026",
         status: "pending",
         accountNumber: "#7742-156",
         description: "Broadband internet service",

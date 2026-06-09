@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
       <div>
         <p className="text-[#434654] text-sm font-normal">
-          © 2024 UtilityPay Secure Systems.
+          © 2026 UtilityPay Secure Systems.
         </p>
       </div>
     </footer>

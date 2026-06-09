@@ -165,7 +165,7 @@ const BillsPage = () => {
                 </p>
               </div>
               <div className="text-[#C4D2FF] text-xs font-semibold px-3 sm:px-4 py-1 rounded-4xl bg-[#0052CC] w-fit whitespace-nowrap">
-                DUE {bill?.dueDate || "Oct 15, 2024"}
+                DUE {bill?.dueDate || "Oct 15, 2026"}
               </div>
             </div>
 
