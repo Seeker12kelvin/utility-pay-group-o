@@ -3,14 +3,19 @@ import { UserContext } from "./user";
 import { useGSAP } from "@gsap/react";
 import animation from "../images/835.gif";
 import { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Loading = ({ text }) => {
-  const { networkError } = useContext(UserContext);
+  const { networkError, user } = useContext(UserContext);
 
   const errorRef = useRef();
+  const navigate = useNavigate();
 
   useGSAP(
     () => {
+      if (!user) {
+        navigate("/login");
+      }
       gsap.fromTo(
         errorRef.current,
         {

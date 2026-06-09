@@ -5,7 +5,11 @@ import Loading from "./loading";
 const ProtectedLayouts = ({ children }) => {
   const { user, userData } = useContext(UserContext);
 
-  return user && userData.name ? children : <Loading />;
+  if (user && userData.name) {
+    return children;
+  } else {
+    return <Loading />;
+  }
 };
 
 export default ProtectedLayouts;

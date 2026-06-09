@@ -115,19 +115,6 @@ const LoginPage = () => {
             >
               Login to Dashboard
             </button>
-
-            <div className="flex gap-2 items-center justify-between">
-              <hr className="border-[#C3C6D6] border max-[375px]:w-[25%] max-[481px]:w-[30%] min-[481px]:w-[30%]" />
-              <p className="text-[#434654] text-sm text-center">
-                or continue with
-              </p>
-              <hr className="border-[#C3C6D6] border max-[375px]:w-[25%] max-[481px]:w-[30%] min-[481px]:w-[30%]" />
-            </div>
-
-            <button className="border-[#091C35] border h-11.5 text-xs font-semibold flex gap-2 items-center justify-center">
-              <FaGoogle size={20} />
-              Google
-            </button>
           </div>
         ) : (
           <div className="h-full w-full flex justify-center items-center bg-[#ffffff49]">
@@ -139,7 +126,7 @@ const LoginPage = () => {
 
       <p className="text-sm text-[#002045] text-center">
         Don't have an account yet?{" "}
-        <Link to={"/"} className="text-[#003D9B]">
+        <Link to={"/signup"} className="text-[#003D9B]">
           Create an account
         </Link>
       </p>
