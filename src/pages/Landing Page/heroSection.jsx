@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { UserContext } from "../../components/user";
-import bg_image from "../../images/AB6AXuDUsjoI1vR6EmaHRSfR8n26_AUcq4DRE_5SZVKRCsAvMS_8wlz5dkaxCcosu03RA4AGonjLaBBkQlR2W24XuJH9IoLzwdOli2Z8qeefDHBZQZj1fbAD27iTGK2Fdqcfb5ARA1IzhNH3lKivvq-qMJQwfld6fbcTkma-rLeI2SWWZPDowthD39ZeXNK6R62eo8md4pbVW9VqrqZsr_F6yGkjKA2W9yfRyQpdyNVVU3kk7VODR00r.png";
+import bg_image from "../../images/bill-logo.png";
 
 const HeroSection = () => {
   const { user } = useContext(UserContext);
